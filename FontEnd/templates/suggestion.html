@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flask Text Animation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Background color with gradient and animation */
+        background: linear-gradient(90deg, #3b503a, #feceab, #ff847c, #e84a5f, #6193a9, #2c3c2b);
+        background-size: 300% 300%;
+        animation: gradientAnimation 5s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .container {
+        max-width: 80%;
+        background-color: rgb(229, 228, 228); /* Box color */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: auto; /* Add overflow property */
+    }
+
+    .text {
+        margin-top: -20px;
+        color: #250d09;
+        font-size: 18px;
+        text-align: justify; /* Justify text */
+        white-space: pre-line; /* Preserve line breaks */
+        animation: textAnimation 3s infinite alternate;
+    }
+
+    
+</style>
+</head>
+<body>
+       
+<div class="container" id="container">
+    <div class="text">
+    <p style="text-align: center; font-size:27px; height:69px;margin: top -49px; font-weight:bolder">
+        According to our analysis, you have a low chance of placement. Here are some suggestions to improve your career prospects:
+    </p>
+    • Focus on Academic Performance (CGPA): Prioritize your studies and aim to improve your CGPA. Attend all classes regularly, actively participate in discussions, seek help from professors or tutors if needed, and allocate sufficient time for studying and completing assignments.
+
+    • Internship Opportunities: Despite having low internship experience, actively seek out internship opportunities relevant to your field of study. Look for internships through online job portals, career fairs, and networking with professionals in your industry. Consider applying to smaller companies or startups where competition might be lower.
+
+    • Clear Active Backlogs: Dedicate time and effort to address your active backlogs. Create a study schedule to systematically review and understand the material. Seek guidance from professors or classmates, utilize online resources, and practice solving problems related to the subjects with backlogs.
+
+    • Skill Development and Projects: Invest time in learning new skills that are in demand in your field. This could include programming languages, software tools, or industry-specific knowledge. Additionally, start working on personal projects or join group projects to demonstrate your skills and build your portfolio.
+
+    • Seek Support and Guidance: Don't hesitate to seek support from mentors, career counselors, or academic advisors. They can provide valuable advice, resources, and support to help you overcome your challenges and achieve your career goals.
+
+    • Remember, consistency, determination, and proactive efforts are key to overcoming these challenges and enhancing your prospects for future career opportunities.
+    </div>
+</div>
+
+<script>
+    // Dynamically adjust container height based on text content
+    window.onload = function() {
+        var container = document.getElementById('container');
+        var text = document.querySelector('.text');
+        container.style.height = text.offsetHeight + 'px';
+    };
+</script>
+
+</body>
+</html>

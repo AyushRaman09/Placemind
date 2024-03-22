@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flask Text Animation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Background color with gradient and animation */
+        background: linear-gradient(90deg, #3b503a, #feceab, #ff847c, #e84a5f, #6193a9, #2c3c2b);
+        background-size: 300% 300%;
+        animation: gradientAnimation 5s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .container {
+        max-width: 80%;
+        background-color: rgb(229, 228, 228); /* Box color */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: auto; /* Add overflow property */
+    }
+
+    .text {
+        margin-top: -20px;
+        color: #250d09;
+        font-size: 18px;
+        text-align: justify; /* Justify text */
+        white-space: pre-line; /* Preserve line breaks */
+        animation: textAnimation 3s infinite alternate;
+    }
+
+    
+</style>
+</head>
+<body>
+       
+<div class="container" id="container">
+    <div class="text">
+        
+    • {{ suggestions }}
+    
+    • Always semember that your journey doesn't end here. Instead, let this be a stepping stone towards even greater success.
+    
+    • Continue to challenge yourself, set ambitious goals, and strive for excellence in everything you do. Embrace opportunities for growth and learning within your new role, and always remain open to acquiring new skills and knowledge.
+    
+    • Remember the obstacles you've overcome to reach this point, and let them serve as reminders of your resilience and strength. Stay focused, stay hungry for success, and never lose sight of your aspirations.
+    
+    • Above all, believe in yourself and your abilities. You have already proven that you have what it takes to succeed, and there's no limit to what you can achieve. Keep pushing forward with confidence, and let your determination propel you towards even greater heights. Your best days are yet to come!"
+    </div>
+</div>
+
+<script>
+    // Dynamically adjust container height based on text content
+    window.onload = function() {
+        var container = document.getElementById('container');
+        var text = document.querySelector('.text');
+        container.style.height = text.offsetHeight + 'px';
+    };
+</script>
+
+</body>
+</html>

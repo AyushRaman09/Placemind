@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questionnaire</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        h3 {
+            top: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .question-box {
+            margin-bottom: 30px;
+        }
+        
+        label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+        
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .radio-group input[type="radio"]:checked + label {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌟 Your insights shape your path 🌟</h2>
+        <h3>Questionnaire</h3>
+        <form action="/submit_questionnaire" method="post">
+            <div class="question-box">
+                <label for="user_name">Name</label><br>
+                <input type="text" name="user_name" id="user_name" required>
+            </div>
+
+            <div class="question-box">
+                <label for="user_age">Age</label><br>
+                <input type="number" name="user_age" id="user_age" required>
+            </div>
+
+            <div class="question-box">
+                <label for="user_Gender">Gender</label><br>
+                <div class="radio-group">
+                    <input type="radio" name="user_Gender" id="male" value="0" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="user_Gender" id="female" value="1" required>
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <label for="user_stream">Stream</label><br>
+                <div class="radio-group">
+                    <input type="radio" name="user_stream" id="cs" value="0" required>
+                    <label for="cs">Computer Science</label>
+                    <input type="radio" name="user_stream" id="it" value="1" required>
+                    <label for="it">Information Technology</label>
+                    <input type="radio" name="user_stream" id="ece" value="2" required>
+                    <label for="ece">Electronics And Communication</label>
+                    <input type="radio" name="user_stream" id="mech" value="3" required>
+                    <label for="mech">Mechanical</label>
+                    <input type="radio" name="user_stream" id="ee" value="4" required>
+                    <label for="ee">Electrical</label>
+                    <input type="radio" name="user_stream" id="civil" value="5" required>
+                    <label for="civil">Civil</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <label for="user_internships">Internship</label><br>
+                <input type="number" name="user_internships" id="user_internships" value="0" required>
+            </div>
+
+            <div class="question-box">
+                <label for="user_CGPA">CGPA</label><br>
+                <input type="number" name="user_CGPA" id="user_CGPA" value="0" step="0.01" min="0" required>
+            </div>
+
+            <div class="question-box">
+                <label for="user_hostel">Do you live in hostel?</label><br>
+                <div class="radio-group">
+                    <input type="radio" name="user_hostel" id="hostel_yes" value="1" required>
+                    <label for="hostel_yes">Yes</label>
+                    <input type="radio" name="user_hostel" id="hostel_no" value="0" required>
+                    <label for="hostel_no">No</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <label for="user_backlogs">Do you have any backlogs?</label><br>
+                <div class="radio-group">
+                    <input type="radio" name="user_backlogs" id="backlogs_yes" value="0" required>
+                    <label for="backlogs_yes">Yes</label>
+                    <input type="radio" name="user_backlogs" id="backlogs_no" value="1" required>
+                    <label for="backlogs_no">No</label>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <label for="user_projects">How many number of projects you have:</label><br>
+                <input type="number" name="user_projects" id="user_projects" required>
+            </div>
+
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
